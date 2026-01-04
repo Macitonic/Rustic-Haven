@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  /* Use the --color-* prefix for custom colors */
+  --color-primary: #ecbd13;
+  --color-background-light: #f8f8f6;
+  --color-background-dark: #221e10;
+  --color-text-dark: #1b180d;
+  --color-text-light: #9a894c;
+  --color-coffee-dark: #3e3221;
+  --color-paper-cream: #f3f1e7;
+  --color-rustic-brown: #5d4037;
+  --color-rustic-clay: #8d6e63;
+  --color-rustic-cream: #f3f1e7;
+  --color-espresso: #2c241b;
+  --color-clay: #8d7b68;
+
+  /* Font Families */
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  /* Border Radii */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}

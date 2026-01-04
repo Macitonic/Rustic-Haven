@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rustic Haven</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <style>
+      /* Custom scrollbar for a polished look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4d4d4;
+        border-radius: 4px;
+      }
+      .rustic-texture {
+        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDjSLMmKdopNqeyVKBcd0ksHtkeZ6VLOvb-wEc6NAclc88xy7hzGe4xutVQR8Gk1MA2n-YNQLwkOrb0i0aYFE2Q8uvK_HsdyExn58x8u-l52m2KC32rYlUladbbjL62s4A2ZaBsVf8wnhfgqbjLDSm2Wxle2yNs3tm47qup8xGwrSOdHwKnSoBRfgVLg_CuVfjhXotg1wb4ZM26faXHqfU2ZLcMMnLPvqSz6nlBLmkX-s-ctwLypQY6X1tmvLx8FYh0P09RSt0nQrrR);
+      }
+
+      .texture-paper {
+        background-color: #fcfbfb;
+        background-color: radial-gradient(#e5e0d3 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+
+      .card-show {
+        box-shadow: 0 20px 25px -5px rgba(27, 24, 13, 0.08),
+          0 10px 10px -5px rgba(27, 24, 13, 0.03);
+      }
+
+      .heading-serif {
+        font-family: "playfair Display", serif;
+      }
+
+      .rustic-shadow {
+        box-shadow: 0 4px 20px -2px rgba(93, 64, 55, 0.15);
+      }
+
+      .grain-overlay {
+        position: relative;
+      }
+
+      .grain-overlay::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDgNBomuxgUTcxLO31NnzCFq118fOc4qAq-hNGQnk329TwgKpPgkwq6J9e9wmp0XmZ9d5GvpfT_nQPdkyJXbAgLUex705WubGocAnosMUA2S1n6hEsIBKwV45Nk9AfjVyrG2fxucP613uIEezUNCJF5UPMRbKUM7i9YAuR9kQzFGjONy9t3WFAHX9FqvfasY8tYk4f_qt3fgzunXSYFO51lChLhsQmtyVuX9Q4Dy6CYNglUR0hOrIjoeTQxxT0ngiP1Xmb4O_opt4da);
+        z-index: 0;
+      }
+
+      .content-z {
+        position: relative;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-espresso dark:text-background-light antialiased selection:bg-primary selection:text-espresso"
+  >
+    <!-- Wrapper -->
+    <main
+      class="relative flex flex-col min-h-screen overflow-x-hidden rustic-texture"
+    >
+      <!-- Navigation -->
+      <nav class="w-full z-50 transition-all duration-300 px-6 lg:px-12 py-6">
+        <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <a class="flex items-center gap-3 group" href="#">
+            <div
+              class="flex items-center justify-center size-10 rounded-lg bg-primary/20 text-primary dark:text-primary dark:bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-espresso"
+            >
+              <span class="material-symbols-outlined text-2xl">cottage</span>
+            </div>
+            <span
+              class="font-serif text-2xl font-bold tracking-tight text-espresso dark:text-background-light"
+              >Rustic Haven</span
+            >
+          </a>
+          <!-- Desktop Links -->
+          <div class="hidden md:flex items-center gap-10">
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Menu</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Our Story</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Events</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Gallery</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Contact</a
+            >
+          </div>
+
+          <!-- CTA & Hamburger -->
+          <div class="flex items-center gap-4">
+            <button
+              class="hidden md:flex items-center gap-2 bg-espresso text-background-light px-5 py-2.5 rounded-lg font-bold hover:bg-primary hover:text-espresso transition-all duration-300 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >calendar_month</span
+              >
+              <span>Book an Event</span>
+            </button>
+            <!-- hamburger menu -->
+            <button
+              class="md:hidden flex items-center justify-center size-10 text-espresso dark:text-background-light"
+            >
+              <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- CTA & Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden fixed inset-0 bg-background-light bg-opacity-95 flex flex-col items-center justify-center gap-6 text-xl font-medium text-espresso transform -translate-y-full transition-transform duration-300 z-40"
+      >
+        <a href="#" class="hover:text-primary transition-colors">Home</a>
+        <a href="#" class="hover:text-primary transition-colors">Menu</a>
+        <a href="#" class="hover:text-primary transition-colors">Our Story</a>
+        <a href="#" class="hover:text-primary transition-colors">Events</a>
+        <a href="#" class="hover:text-primary transition-colors">Gallery</a>
+        <a href="#" class="hover:text-primary transition-colors">Contact</a>
+        <button
+          class="bg-espresso text-background-light px-5 py-2.5 rounded-lg font-bold hover:bg-primary hover:text-espresso transition-all duration-300"
+        >
+          Book an Event
+        </button>
+      </div>
+      <!-- Hero Section -->
+      <section
+        class="flex-grow flex flex-col justify-center py-8 lg:py-16 px-6 lg:px-12"
+      >
+        <div class="max-w-[1280px] mx-auto w-full">
+          <div
+            class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+          >
+            <!-- Decorative background element for layering -->
+            <div
+              class="hidden lg:block absolute -top-20 -left-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -z-10"
+            ></div>
+            <!-- Text Content (Foreground Layer) -->
+            <div
+              class="lg:col-span-5 flex flex-col gap-8 z-10 order-2 lg:order-1"
+            >
+              <div class="flex flex-col gap-4">
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 w-fit border border-primary/20"
+                >
+                  <span
+                    class="size-2 rounded-full bg-primary animate-pulse"
+                  ></span>
+                  <span
+                    class="text-xs font-bold uppercase tracking-wider text-espresso/80 dark:text-background-light/90"
+                    >Est. 2020</span
+                  >
+                </div>
+                <h1
+                  class="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-espresso "
+                >
+                  Find your
+                  <span class="relative whitespace-nowrap z-10">
+                    <span class="relative z-10 italic">Moment</span>
+                    <span
+                      class="absolute bottom-1 left-0 w-full h-3 bg-primary/40 -z-10 -rotate-1"
+                    ></span>
+                  </span>
+                  at Rustic Haven.
+                </h1>
+                <p
+                  class="text-lg text-clay dark:text-[#d0c6bc] leading-relaxed max-w-lg"
+                >
+                  Rustic Haven is where good food, good music, and good people
+                  meet. Bonfires, BBQs, birthdays, art sessions, live
+                  performances—just pure chill in a beautifully styled space.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-4 items-center mt-2">
+                <button
+                  class="group flex items-center justify-center gap-3 h-12 px-8 bg-primary text-espresso text-base font-bold rounded-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <span>Book an Event</span>
+                  <span
+                    class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform"
+                    >calendar_month</span
+                  >
+                </button>
+                <button
+                  class="group flex items-center justify-center gap-3 h-12 px-8 bg-transparent border border-espresso/20 dark:border-background-light/20 text-espresso dark:text-background-light text-base font-bold rounded-lg hover:bg-espresso/5 dark:hover:bg-background-light/10 transition-all duration-300"
+                >
+                  <span>Explore the Place</span>
+                  <span class="material-symbols-outlined text-[20px]"
+                    >arrow_outward</span
+                  >
+                </button>
+              </div>
+              <!-- Social Proof / Stats -->
+              <div
+                class="flex items-center gap-8 pt-4 border-t border-espresso/10 dark:border-background-light/10"
+              >
+                <div>
+                  <p
+                    class="text-2xl font-serif font-bold text-espresso dark:text-background-light"
+                  >
+                    4.9
+                  </p>
+                  <p
+                    class="text-xs uppercase tracking-wide text-clay font-bold"
+                  >
+                    Rating
+                  </p>
+                </div>
+                <div
+                  class="w-px h-8 bg-espresso/10 dark:bg-background-light/10"
+                ></div>
+                <div>
+                  <p
+                    class="text-2xl font-serif font-bold text-espresso dark:text-background-light"
+                  >
+                    5k+
+                  </p>
+                  <p
+                    class="text-xs uppercase tracking-wide text-clay font-bold"
+                  >
+                    Happy Guests
+                  </p>
+                </div>
+                <div
+                  class="w-px h-8 bg-espresso/10 dark:bg-background-light/10"
+                ></div>
+                <div class="flex -space-x-3">
+                  <img
+                    alt="Avatar of a happy customer"
+                    class="size-10 rounded-full border-2 border-background-light dark:border-background-dark object-cover"
+                    data-alt="Portrait of a smiling woman"
+                    src="https://i.pinimg.com/736x/9e/c5/b3/9ec5b39b1ab259db14f6d93af5e392b6.jpg"
+                  />
+                  <img
+                    alt="Avatar of a happy customer"
+                    class="size-10 rounded-full border-2 border-background-light dark:border-background-dark object-cover"
+                    data-alt="Portrait of a smiling man"
+                    src="https://i.pinimg.com/736x/46/a7/e7/46a7e7d548beba32d081b4346f49b58b.jpg"
+                  />
+                  <img
+                    alt="Avatar of a happy customer"
+                    class="size-10 rounded-full border-2 border-background-light dark:border-background-dark object-cover"
+                    data-alt="Portrait of a bearded man"
+                    src="https://i.pinimg.com/1200x/1a/43/9a/1a439a0ef1efe812d77d71a8f30d55e6.jpg"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Visual Layer (Mid-ground & Background) -->
+            <div
+              class="lg:col-span-7 relative h-[400px] lg:h-[600px] w-full order-1 lg:order-2 group"
+            >
+              <!-- Main Image with "Layered" effect -->
+              <div
+                class="absolute inset-0 lg:ml-12 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-500 ease-out group-hover:scale-[1.01]"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10"
+                ></div>
+                <img
+                  alt="Cozy interior of a rustic haven with wooden tables and warm lighting"
+                  class="w-full h-full object-cover"
+                  data-alt="Warm rustic interior with coffee on table"
+                  src="https://lh3.googleusercontent.com/p/AF1QipMkrLkaU0hsG-k8PbLO2PYG5HP8s_386O2kxLyT=s1360-w1360-h1020-rw"
+                />
+                <!-- Floating Card on Image -->
+                <div
+                  class="absolute bottom-6 left-6 right-6 lg:right-auto lg:w-72 bg-background-light/95 dark:bg-[#2c241b]/95 backdrop-blur-md p-5 rounded-xl z-20 border border-white/20 shadow-lg"
+                >
+                  <div class="flex items-start gap-3">
+                    <div class="p-2 bg-primary/20 rounded-lg text-primary">
+                      <span class="material-symbols-outlined">restaurant</span>
+                    </div>
+                    <div>
+                      <h3
+                        class="font-serif font-bold text-espresso dark:text-background-light"
+                      >
+                        Daily Bites
+                      </h3>
+                      <p class="text-xs text-clay mt-1">
+                        Good eats. Good drinks. Good energy.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Secondary decorative image (parallax layer feel) -->
+              <div
+                class="hidden lg:block absolute -bottom-10 -left-28 w-48 h-64 rounded-xl overflow-hidden border-4 border-background-light dark:border-background-dark shadow-xl z-30"
+              >
+                <img
+                  alt="Close up of hands holding a warm cup of coffee"
+                  class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                  data-alt="Hands holding a warm ceramic cup"
+                  src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwXTrB_WFGqs-XX7GF8p7N8fE3tTqDf1L88tRYwMhKcRp2GVbf8VJqlYH8GrkVfEz1GST1lsI9N4yNaJLJ0WLFps8qYGguuNe842995n9zbTXgjGLUuhRa-_8m3Xep0oulC-IduNg=s1360-w1360-h1020-rw"
+                />
+              </div>
+              <!-- Abstract Shape Decoration -->
+              <div
+                class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-12 w-24 h-24 border-4 border-primary/30 rounded-full z-0 hidden lg:block"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content Wrapper -->
+      <section class="texture-paper relative">
+        <!-- Hero / Story Section -->
+        <div class="relative pt-20 pb-32 overflow-hidden px-4 lg:px-40">
+          <div
+            class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+          >
+            <!-- Visuals Column (Left) -->
+            <div
+              class="lg:col-span-7 relative z-10 flex flex-col items-start pt-10 lg:pt-0"
+            >
+              <!-- Main Large Image -->
+              <div
+                class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden card-shadow transform -rotate-1 border-4 border-white"
+              >
+                <div
+                  class="w-full h-full bg-cover bg-center"
+                  data-alt="Warm cafe interior with wooden tables and sunlight"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyilThjB1ptVX_8z9xTBf63zgsiWlZ3TL9UWSjIQrECtd_0fIFUXzo5WvSZgyMKCE0hn7rEWa_f8q4mrb_M4ehO0_Yo5qzmbgQdZ7WBFR9ka_xmw3N0CY9wcLGDE3dyA7WK18pU=s1360-w1360-h1020-rw');
+                  "
+                ></div>
+              </div>
+              <!-- Overlapping Detail Image -->
+              <div
+                class="absolute -bottom-16 -right-4 lg:-right-12 w-2/3 lg:w-1/2 aspect-square rounded-2xl overflow-hidden card-shadow transform rotate-2 border-4 border-white z-20"
+              >
+                <div
+                  class="w-full h-full bg-cover bg-center"
+                  data-alt="Cafe Interior"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyfY6yKjLIsQUqIx7k-IA7DqRJHBpph6P6h4-s_5JUYIMHFfiCAWZeiaQpJltZBWJPoi-y4VGxOaioT087vbt-f9bv-bxdcTLePYhkc70oDCSZrnwUxmZHkBJWJlrOgN3pcGek-GA=s1360-w1360-h1020-rw');
+                  "
+                ></div>
+              </div>
+              <!-- Decorative Badge -->
+              <div
+                class="absolute top-4 -right-6 lg:-right-10 bg-primary text-text-dark rounded-full size-24 lg:size-28 flex flex-col items-center justify-center shadow-lg transform rotate-12 z-30 border-4 border-[#fcfbf8]"
+              >
+                <span class="text-[10px] uppercase tracking-widest font-bold"
+                  >Est.</span
+                >
+                <span class="text-2xl font-bold heading-serif leading-none"
+                  >2020</span
+                >
+                <span class="text-[10px] uppercase tracking-widest font-bold"
+                  >Organic</span
+                >
+              </div>
+            </div>
+            <!-- Narrative Column (Right) -->
+            <div class="lg:col-span-5 relative z-20 mt-20 lg:mt-0">
+              <div
+                class="bg-white/80 dark:bg-background-dark/90 backdrop-blur-sm p-8 lg:p-10 rounded-2xl border border-[#e7e2cf] card-shadow relative"
+              >
+                <!-- Decorative Pin -->
+                <div
+                  class="absolute -top-3 left-1/2 -translate-x-1/2 size-4 rounded-full bg-[#d4c5a3] shadow-inner border border-[#bfae8a]"
+                ></div>
+                <span
+                  class="text-primary font-bold tracking-widest text-xs uppercase mb-2 block"
+                  >Our Journey</span
+                >
+                <h1
+                  class="text-4xl lg:text-5xl font-bold text-text-paper-cream heading-serif mb-6 leading-tight"
+                >
+                  From Vibe to Community: <br /><span
+                    class="italic text-coffee-dark/80"
+                    >The Story</span
+                  >
+                </h1>
+                <div
+                  class="space-y-4 text-text-light/90 text-lg leading-relaxed"
+                >
+                  <p>
+                    <span
+                      class="text-4xl float-left mr-2 mt-[-10px] heading-serif text-primary"
+                      >R</span
+                    >ustic Haven started as a simple idea : people needed a
+                    place to breathe and hang out without feeling rushed. A
+                    place to meet new people, share ideas, create art, and enjoy
+                    good food.
+                  </p>
+                  <p>
+                    As our community grew, so did our dream. Now it’s birthdays,
+                    bonfire nights, crochet circles, live music, and random
+                    conversations that turn into friendships. Low-key. Cozy.
+                    Unforgettable.
+                  </p>
+                </div>
+                <div
+                  class="mt-8 pt-8 border-t border-[#f3f1e7] flex items-center gap-6"
+                >
+                  <button
+                    class="flex items-center justify-center gap-2 bg-text-dark text-white px-6 py-3 rounded-lg hover:bg-primary hover:text-text-dark transition-all duration-300 shadow-md group"
+                  >
+                    <span class="font-medium">Read Full History</span>
+                    <span
+                      class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1"
+                      >arrow_forward</span
+                    >
+                  </button>
+                  <div class="h-px flex-1 bg-[#f3f1e7]"></div>
+                  <span class="heading-serif italic text-xl text-primary"
+                    >R.H.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Values Section (Feature Grid) -->
+        <section class="bg-white py-20 px-4 lg:px-40 border-y border-[#f3f1e7]">
+          <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+              <h2
+                class="text-3xl lg:text-4xl font-bold text-text-dark heading-serif mb-4"
+              >
+                Rooted in Good Vibes
+              </h2>
+              <p class="text-text-light text-lg">
+                Every corner of Rustic Haven is designed for connection,
+                creativity, and comfort.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Feature 1 -->
+              <div
+                class="group p-8 rounded-xl bg-[#fcfbf8] border border-[#e7e2cf] hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="size-12 rounded-full bg-[#fcfbf8] border border-[#e7e2cf] flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-colors"
+                >
+                  <span class="material-symbols-outlined text-text-dark"
+                    >public</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-text-dark heading-serif mb-3">
+                  Locally Inspired
+                </h3>
+                <p class="text-text-light leading-relaxed">
+                  Built with local art, textures, and details that reflect the
+                  culture and creativity around us.
+                </p>
+              </div>
+              <!-- Feature 2 -->
+              <div
+                class="group p-8 rounded-xl bg-[#fcfbf8] border border-[#e7e2cf] hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="size-12 rounded-full bg-[#fcfbf8] border border-[#e7e2cf] flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-colors"
+                >
+                  <span class="material-symbols-outlined text-text-dark"
+                    >handyman</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-text-dark heading-serif mb-3">
+                  Handmade Details
+                </h3>
+                <p class="text-text-light leading-relaxed">
+                  From seating to wall pieces, our space is filled with
+                  handcrafted features that give Rustic Haven its character.
+                </p>
+              </div>
+              <!-- Feature 3 -->
+              <div
+                class="group p-8 rounded-xl bg-[#fcfbf8] border border-[#e7e2cf] hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="size-12 rounded-full bg-[#fcfbf8] border border-[#e7e2cf] flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-colors"
+                >
+                  <span class="material-symbols-outlined text-text-dark"
+                    >diversity_3</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-text-dark heading-serif mb-3">
+                  Community First
+                </h3>
+                <p class="text-text-light leading-relaxed">
+                  Not just a hangout—this is where people meet, share ideas,
+                  celebrate moments, and create memories together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Visual Grid / Collage -->
+        <section class="py-20 px-4 lg:px-40">
+          <div class="max-w-7xl mx-auto">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 h-auto lg:h-[500px]"
+            >
+              <!-- Large vertical item -->
+              <div
+                class="lg:col-span-2 lg:row-span-2 relative group overflow-hidden rounded-xl"
+              >
+                <div
+                  class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  data-alt="Cozy cabin bedroom with wooden walls"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzbC1RtOP1uIgJPBvCKEuvhSEQ4OtfSxPyrmJoFYerAP-KllalusZkXm44uVRz8RmrH_5vhLKz-xeUTQnnK9uH54Xsf_d1qBpM_HgwyG-gdoPooazqCgzneNjms2ghMK3PMXA62kw=s1360-w1360-h1020-rw');
+                  "
+                ></div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"
+                ></div>
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                  <p class="font-medium text-primary mb-1">Hang Out</p>
+                  <h3 class="text-2xl font-bold heading-serif">The Space</h3>
+                </div>
+              </div>
+              <!-- Small square item -->
+              <div
+                class="relative group overflow-hidden rounded-xl min-h-[240px]"
+              >
+                <div
+                  class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  data-alt="Pouring hot coffee into a cup"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzHS9ZyvFAJrcaI0iVOe-BiCzilF9jrKIcYgt0g8UDoaa4qgWX99Nf3b-W-t7ZG6mAH7S4UGhPL6fB5BmNMPt4hzW-MQw3wth2QhYxPO1tdMEcNuIa0AsRvRYBqUb5JLagNeCky=s1360-w1360-h1020-rw');
+                  "
+                ></div>
+                <div
+                  class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"
+                ></div>
+              </div>
+              <!-- Small square item with text -->
+              <div
+                class="bg-primary p-6 rounded-xl flex flex-col justify-center items-center text-center"
+              >
+                <span
+                  class="material-symbols-outlined text-4xl mb-4 text-text-dark"
+                  >restaurant</span
+                >
+                <h3 class="text-xl font-bold heading-serif text-text-dark">
+                  Good Food &amp; Drinks
+                </h3>
+                <p class="text-sm mt-2 font-medium text-text-dark/80">
+                  7:00 AM - 11:00 PM
+                </p>
+              </div>
+              <!-- Wide item spanning 2 cols on mobile, 2 on lg -->
+              <div
+                class="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-xl min-h-[240px]"
+              >
+                <div
+                  class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  data-alt="People working together at a rustic haven"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxbxUYg8sPUQD3T59NkeqTeh_8xumvrkCpRA7LuSK6tqITTL7BFqnj1clLp-EHX8fc8zbVvZ_dKh0B0XR6H2GjPVleESfaiGaZhIH2udbCLCHj9c5Ww6ZRL3a1o1-Gypx5CHqd4=s1360-w1360-h1020-rw');
+                  "
+                ></div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                ></div>
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                  <p class="font-medium text-primary mb-1">Connect</p>
+                  <h3 class="text-xl font-bold heading-serif">
+                    Community Events
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CTA Section -->
+        <section
+          class="py-20 px-4 lg:px-40 bg-[#221e10] text-white relative overflow-hidden"
+        >
+          <!-- Background Pattern -->
+          <div
+            class="absolute inset-0 opacity-45"
+            style="
+              background: url('https://i.pinimg.com/736x/95/2d/28/952d28618b060d56340a6afd932fe857.jpg')
+                center / cover no-repeat fixed;
+            "
+          ></div>
+          <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span
+              class="inline-block py-1 px-3 rounded-full bg-white/10 text-primary text-sm font-bold tracking-wide mb-6 backdrop-blur-sm border border-white/10"
+            >
+              Reserve Your Spot
+            </span>
+            <h2
+              class="text-4xl lg:text-6xl font-bold heading-serif mb-6 leading-tight"
+            >
+              Experience the
+              <span class="text-primary italic">Warmth</span> Yourself
+            </h2>
+            <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
+              Looking for a place to celebrate, connect, or just chill? Whether
+              it’s a birthday, bonfire night, or a laid-back hangout with good
+              food and music, Rustic Haven is ready for you.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                class="bg-primary hover:bg-yellow-500 text-text-dark text-base font-bold px-8 py-4 rounded-lg transition-all shadow-lg hover:shadow-primary/20"
+              >
+                Book an Event
+              </button>
+              <button
+                class="bg-transparent hover:bg-white/10 text-white border border-white/20 text-base font-bold px-8 py-4 rounded-lg transition-all"
+              >
+                View Menu
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section
+        class="grain-overlay relative min-h-screen w-full flex flex-col items-center py-12 md:py-20"
+      >
+        <!-- Section Header -->
+        <div
+          class="content-z container mx-auto px-4 md:px-6 max-w-[960px] text-center mb-16"
+        >
+          <div
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 mb-6"
+          >
+            <span class="material-symbols-outlined text-sm text-rustic-brown"
+              >auto_awesome</span
+            >
+            <span
+              class="text-sm font-bold text-rustic-brown uppercase tracking-wider"
+              >Our Vibes</span
+            >
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-extrabold text-rustic-brown mb-6 leading-tight"
+          >
+            Food, Music &amp; <br class="hidden md:block" />Moments
+          </h2>
+          <p class="text-lg text-rustic-clay max-w-2xl mx-auto leading-relaxed">
+            Good eats, warm fires, creative energy, and space to just be. Rustic
+            Haven is built for chill days, lit nights, and unforgettable
+            hangouts.
+          </p>
+        </div>
+        <!-- Cards Grid -->
+        <div
+          class="content-z container mx-auto px-4 md:px-8 lg:px-12 max-w-[1200px]"
+        >
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10"
+          >
+            <!-- Card 1: Stay -->
+            <div class="group relative flex flex-col pt-8">
+              <!-- Background Decorative Panel -->
+              <div
+                class="absolute inset-0 top-16 bg-[#f3f1e7] rounded-2xl -z-10 transform group-hover:rotate-1 transition-transform duration-500 ease-out border border-[#e5e0cf]"
+              ></div>
+              <!-- Image Container -->
+              <div
+                class="relative mx-4 -mt-8 mb-4 overflow-hidden rounded-xl shadow-lg aspect-[4/3]"
+              >
+                <div
+                  class="absolute top-3 right-3 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-primary text-sm"
+                    >star</span
+                  >
+                  <span class="text-xs font-bold text-rustic-brown">4.9</span>
+                </div>
+                <div
+                  class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  data-alt="Cozy wooden cabin interior with fireplace"
+                  style="
+                    background-image: url('https://i.pinimg.com/736x/c5/72/91/c57291e615dfa7915f6be716c307283c.jpg');
+                  "
+                ></div>
+                <div
+                  class="absolute bottom-3 left-3 bg-primary text-rustic-brown text-xs font-bold px-3 py-1.5 rounded-md shadow-sm"
+                >
+                  KSH 500/Person
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="px-8 pb-8 pt-2">
+                <div class="flex items-center justify-between mb-2">
+                  <span
+                    class="text-xs font-bold tracking-widest text-rustic-clay uppercase"
+                    >Event Space</span
+                  >
+                </div>
+                <h3
+                  class="text-2xl font-bold text-rustic-brown mb-3 group-hover:text-primary-dark transition-colors"
+                >
+                  Birthday &amp; Private Events
+                </h3>
+                <p class="text-sm text-gray-600 mb-6 line-clamp-2">
+                  Celebrate your moments in a beautifully styled space made for
+                  laughter, music, and memories.
+                </p>
+                <!-- Amenities -->
+                <div
+                  class="flex gap-4 mb-6 border-t border-dashed border-[#dcd7c5] pt-4"
+                >
+                  <div
+                    class="flex items-center gap-1.5 text-rustic-clay"
+                    title="Wifi Available"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >cake</span
+                    >
+                    <span class="text-xs font-medium">Birthdays</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-1.5 text-rustic-clay"
+                    title="Fireplace"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >fireplace</span
+                    >
+                    <span class="text-xs font-medium">Bonfires</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-1.5 text-rustic-clay"
+                    title="2 Guests"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >outdoor_grill</span
+                    >
+                    <span class="text-xs font-medium">BBQs</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full py-3 rounded-lg border-2 border-rustic-brown text-rustic-brown font-bold text-sm hover:bg-rustic-brown hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                >
+                  Book This Stay
+                  <span
+                    class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Card 2: Food -->
+            <div class="group relative flex flex-col pt-8">
+              <!-- Background Decorative Panel -->
+              <div
+                class="absolute inset-0 top-16 bg-[#f3f1e7] rounded-2xl -z-10 transform group-hover:-rotate-1 transition-transform duration-500 ease-out border border-[#e5e0cf]"
+              ></div>
+              <!-- Image Container -->
+              <div
+                class="relative mx-4 -mt-8 mb-4 overflow-hidden rounded-xl shadow-lg aspect-[4/3]"
+              >
+                <div
+                  class="absolute top-3 right-3 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-primary text-sm"
+                    >local_fire_department</span
+                  >
+                  <span class="text-xs font-bold text-rustic-brown"
+                    >Popular</span
+                  >
+                </div>
+                <div
+                  class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  data-alt="Rustic breakfast bowl with eggs and avocado"
+                  style="
+                    background-image: url('https://i.pinimg.com/1200x/16/bd/b3/16bdb32204b2188e548bfdd33440e16d.jpg');
+                  "
+                ></div>
+                <div
+                  class="absolute bottom-3 left-3 bg-primary text-rustic-brown text-xs font-bold px-3 py-1.5 rounded-md shadow-sm"
+                >
+                  KSH 1,800
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="px-8 pb-8 pt-2">
+                <div class="flex items-center justify-between mb-2">
+                  <span
+                    class="text-xs font-bold tracking-widest text-rustic-clay uppercase"
+                    >Rustic BBQ Platters</span
+                  >
+                </div>
+                <h3
+                  class="text-2xl font-bold text-rustic-brown mb-3 group-hover:text-primary-dark transition-colors"
+                >
+                  Rustic BBQ Platters
+                </h3>
+                <p class="text-sm text-gray-600 mb-6 line-clamp-2">
+                  Big portions, bold flavor, and food that’s best shared with
+                  friends.
+                </p>
+                <!-- Amenities/Details -->
+                <div
+                  class="flex gap-4 mb-6 border-t border-dashed border-[#dcd7c5] pt-4"
+                >
+                  <div class="flex items-center gap-1.5 text-rustic-clay">
+                    <span class="material-symbols-outlined text-[18px]"
+                      >outdoor_grill</span
+                    >
+                    <span class="text-xs font-medium">Freshly Grilled</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-rustic-clay">
+                    <span class="material-symbols-outlined text-[18px]"
+                      >diversity_3</span
+                    >
+                    <span class="text-xs font-medium">Perfect for Groups</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full py-3 rounded-lg border-2 border-rustic-brown text-rustic-brown font-bold text-sm hover:bg-rustic-brown hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                >
+                  Order Online
+                  <span
+                    class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1"
+                    >shopping_bag</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Card 3: Events -->
+            <div class="group relative flex flex-col pt-8">
+              <!-- Background Decorative Panel -->
+              <div
+                class="absolute inset-0 top-16 bg-[#f3f1e7] rounded-2xl -z-10 transform group-hover:rotate-1 transition-transform duration-500 ease-out border border-[#e5e0cf]"
+              ></div>
+              <!-- Image Container -->
+              <div
+                class="relative mx-4 -mt-8 mb-4 overflow-hidden rounded-xl shadow-lg aspect-[4/3]"
+              >
+                <div
+                  class="absolute top-3 right-3 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-primary text-sm"
+                    >star</span
+                  >
+                  <span class="text-xs font-bold text-rustic-brown">5.0</span>
+                </div>
+                <div
+                  class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  data-alt="Night Party"
+                  style="
+                    background-image: url('https://i.pinimg.com/736x/ff/83/f4/ff83f4fb14fb44b134df9e5ece3d4f74.jpg');
+                  "
+                ></div>
+                <div
+                  class="absolute bottom-3 left-3 bg-primary text-rustic-brown text-xs font-bold px-3 py-1.5 rounded-md shadow-sm"
+                >
+                  KSH 1,000/Night Parties
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="px-8 pb-8 pt-2">
+                <div class="flex items-center justify-between mb-2">
+                  <span
+                    class="text-xs font-bold tracking-widest text-rustic-clay uppercase"
+                    >Live Vibes</span
+                  >
+                </div>
+                <h3
+                  class="text-2xl font-bold text-rustic-brown mb-3 group-hover:text-primary-dark transition-colors"
+                >
+                  Music, Art &amp; Chill Nights
+                </h3>
+                <p class="text-sm text-gray-600 mb-6 line-clamp-2">
+                  From acoustic sets and DJ nights to crochet circles and art
+                  sessions—there’s always something happening.
+                </p>
+                <!-- Amenities -->
+                <div
+                  class="flex gap-4 mb-6 border-t border-dashed border-[#dcd7c5] pt-4"
+                >
+                  <div
+                    class="flex items-center gap-1.5 text-rustic-clay"
+                    title="Lake View"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >music_note</span
+                    >
+                    <span class="text-xs font-medium">Live Performances</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-1.5 text-rustic-clay"
+                    title="King Bed"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >palette</span
+                    >
+                    <span class="text-xs font-medium">Creative Events</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full py-3 rounded-lg border-2 border-rustic-brown text-rustic-brown font-bold text-sm hover:bg-rustic-brown hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                >
+                  See Events
+                  <span
+                    class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom Action -->
+          <div class="mt-20 text-center">
+            <a
+              class="inline-flex items-center gap-2 text-rustic-brown font-bold text-lg hover:text-primary transition-colors border-b-2 border-primary/40 hover:border-primary pb-1"
+              href="#"
+            >
+              See Full Menu &amp; Upcoming Events
+              <span class="material-symbols-outlined">arrow_right_alt</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer
+        class="bg-background-light border-t border-[#f3f1e7] pt-16 pb-8 px-4 lg:px-40"
+      >
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+          <div class="flex items-center gap-2 mb-8 text-text-dark">
+            <span class="material-symbols-outlined">cabin</span>
+            <span class="font-bold heading-serif text-2xl">Rustic Haven</span>
+          </div>
+          <div class="flex gap-8 mb-8 flex-wrap justify-center">
+            <a
+              class="text-text-light hover:text-primary transition-colors"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-text-light hover:text-primary transition-colors"
+              href="#"
+              >Story</a
+            >
+            <a
+              class="text-text-light hover:text-primary transition-colors"
+              href="#"
+              >Menu</a
+            >
+            <a
+              class="text-text-light hover:text-primary transition-colors"
+              href="#"
+              >Events</a
+            >
+            <a
+              class="text-text-light hover:text-primary transition-colors"
+              href="#"
+              >Gallery</a
+            >
+            <a
+              class="text-text-light hover:text-primary transition-colors"
+              href="#"
+              >Contact</a
+            >
+          </div>
+          <div class="w-full border-t border-[#f3f1e7] my-8"></div>
+          <div
+            class="flex flex-col md:flex-row justify-between items-center w-full text-sm text-text-light/60"
+          >
+            <p>© 2026 Rustic Haven. All rights reserved.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+              <a class="hover:text-text-dark" href="#">Privacy Policy</a>
+              <a class="hover:text-text-dark" href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      //mobile toggle
+      const menuButton = document.querySelector("button.md\\:hidden");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("-translate-y-full");
+      });
+    </script>
+  </body>
+</html>
